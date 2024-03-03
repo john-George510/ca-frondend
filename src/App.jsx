@@ -49,7 +49,7 @@ export default function App() {
           <div className="w-full h-2 md:h-4"></div>
           <tbody className="bg-[#51A1AA17] rounded-lg backdrop-blur-lg" style={{ maxHeight: "300px", overflowY: "auto" }}>
             {filteredLeaderboard.map((lb, index) => (
-              <tr className="text-xs md:text-2xl text-white" key={index + lb.name}>
+              <tr className="text-xs md:text-2xl text-white uppercase" key={index + lb.name}>
                 <td className="text-center py-4">{leaderboard.indexOf(lb) + 1}</td>
                 <td className="text-center">{lb.name}</td>
                 <td className="text-center">{lb.college}</td>
