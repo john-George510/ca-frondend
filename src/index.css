@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url("/src/assets/bg1.png");
+  background-color: #040c11;
+}
