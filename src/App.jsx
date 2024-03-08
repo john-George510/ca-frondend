@@ -37,23 +37,23 @@ export default function App() {
           <h2 className="text-xl md:text-6xl font-medium text-[#51A1AA]">Leaderboard</h2>
         </div>
         <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" className="w-5/6 h-12 md:h-20 rounded-lg text-black text-xl md:text-4xl pl-8" placeholder="Search College or Name" />
-        <table className="table-auto text-white w-5/6">
+        <table className="table-auto text-white w-5/6 mb-20">
           <thead>
-            <tr className="text-sm md:text-4xl border-b">
-              <th className="text-left pb-2 md:pb-4">Position</th>
-              <th className="text-center pb-2 md:pb-4">Name</th>
-              <th className="text-center pb-2 md:pb-4">College</th>
-              <th className="text-right pb-2 md:pb-4">Score</th>
+            <tr className="text-sm md:text-4xl border-b block">
+              <th className="text-left pb-2 md:pb-4 w-40">Position</th>
+              <th className="text-center pb-2 md:pb-4 w-64">Name</th>
+              <th className="text-center pb-2 md:pb-4 w-[800px]">College</th>
+              {/* <th className="text-right pb-2 md:pb-4">Score</th> */}
             </tr>
           </thead>
           <div className="w-full h-2 md:h-4"></div>
-          <tbody className="bg-[#51A1AA17] rounded-lg backdrop-blur-lg" style={{ maxHeight: "300px", overflowY: "auto" }}>
+          <tbody className="bg-[#51A1AA17] rounded-lg backdrop-blur-lg block h-96 overflow-auto">
             {filteredLeaderboard.map((lb, index) => (
               <tr className="text-xs md:text-2xl text-white uppercase" key={index + lb.name}>
-                <td className="text-center py-4">{leaderboard.indexOf(lb) + 1}</td>
-                <td className="text-center">{lb.name}</td>
-                <td className="text-center">{lb.college}</td>
-                <td className="text-center">{lb.total_count}</td>
+                <td className="text-center py-4 w-40">{leaderboard.indexOf(lb) + 1}</td>
+                <td className="text-center w-64">{lb.name}</td>
+                <td className="text-center flex-grow">{lb.college}</td>
+                {/* <td className="text-center">{lb.total_count}</td> */}
               </tr>
             ))}
           </tbody>
