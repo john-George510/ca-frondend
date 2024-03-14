@@ -32,7 +32,11 @@ export default function App() {
   return (
     <>
       <div className="font-odibee-sans h-full flex flex-col justify-center items-center gap-4 md:gap-12">
-        <div className="flex flex-col items-center pt-4 sm:pt-24 gap-1 md:gap-4">
+        {/* <div className="text-white mt-4">
+          Drishti Website
+        </div> */}
+        <div className="w-5/6 flex flex-col items-center pt-4 gap-1 md:gap-4">
+          <a href="https://www.drishti.cet.ac.in/" className="text-3xl font-medium text-white border rounded-xl px-4 py-2 self-start">Drishti Website</a>
           <h2 className="text-3xl md:text-7xl font-medium text-white">Campus Ambassador</h2>
           <h2 className="text-xl md:text-6xl font-medium text-[#51A1AA]">Leaderboard</h2>
         </div>
@@ -48,11 +52,11 @@ export default function App() {
           </thead>
           <div className="w-full h-2 md:h-4"></div>
           <tbody className="bg-[#51A1AA17] rounded-lg backdrop-blur-lg block h-96 overflow-auto">
-            {filteredLeaderboard.map((lb, index) => (
+            {filteredLeaderboard.slice(0, 20).map((lb, index) => (
               <tr className="text-xs md:text-2xl text-white uppercase" key={index + lb.name}>
-                <td className="text-center py-4 w-40">{leaderboard.indexOf(lb) + 1}</td>
+                <td className="text-left pl-8 py-4 w-40">{leaderboard.indexOf(lb) + 1}</td>
                 <td className="text-center w-64">{lb.name}</td>
-                <td className="text-center flex-grow">{lb.college}</td>
+                <td className="text-center w-[800px]">{lb.college}</td>
                 {/* <td className="text-center">{lb.total_count}</td> */}
               </tr>
             ))}
